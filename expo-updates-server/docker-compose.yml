@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nextjs-docker:
+    build: .
+    ports:
+     - "3000:3000"
+    volumes:
+     - ./code-signing-keys:/app/code-signing-keys
+     - ./updates:/app/updates
+     - ./.env.local:/app/.env.local

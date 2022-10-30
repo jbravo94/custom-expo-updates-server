@@ -8,4 +8,6 @@ services:
     volumes:
      - ./code-signing-keys:/app/code-signing-keys
      - ./updates:/app/updates
-     - ./.env.local:/app/.env.local
+    environment:
+     - HOSTNAME=http://localhost:3000
+     - PRIVATE_KEY_PATH=/app/code-signing-keys/private-key.pem
